@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS users
+(
+    id       INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    name     varchar(250) NOT NULL UNIQUE,
+    password varchar(250) NOT NULL,
+    created  TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

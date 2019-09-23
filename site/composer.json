@@ -1,0 +1,19 @@
+{
+    "name": "root/app",
+    "authors": [
+        {
+            "name": "Asanov Ruslan",
+            "email": "bioforge91@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Site\\App\\" : "src/"
+        }
+    },
+    "require": {
+        "ext-json": "*",
+        "ext-curl": "*",
+        "ext-pdo": "*"
+    }
+}

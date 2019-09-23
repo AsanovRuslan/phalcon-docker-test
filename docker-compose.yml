@@ -1,0 +1,29 @@
+version: '3.2'
+
+networks:
+  backend:
+    driver: bridge
+  frontend:
+    driver: bridge
+
+services:
+  site:
+    build: ./site
+    user: "${USER_ID:-1000}:${GROUP_ID:-1000}"
+    volumes:
+      - ./site:/app
+    ports:
+      - 7070:8080
+    networks:
+      backend:
+      frontend:
+    depends_on:
+      - users
+
+  users:
+    build: ./users
+    user: "${USER_ID:-1000}:${GROUP_ID:-1000}"
+    volumes:
+      - ./users:/app
+    networks:
+      backend:
